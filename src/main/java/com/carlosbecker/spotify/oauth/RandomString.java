@@ -1,9 +1,11 @@
 package com.carlosbecker.spotify.oauth;
 
 import com.google.common.base.Joiner;
+import com.jcabi.aspects.Immutable;
 import java.util.ArrayList;
 import java.util.List;
 
+@Immutable
 public class RandomString {
     private static final String possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 

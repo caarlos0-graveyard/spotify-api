@@ -1,8 +1,10 @@
 package com.carlosbecker.spotify.oauth;
 
+import com.jcabi.aspects.Immutable;
 import org.apache.commons.codec.binary.Base64;
 import lombok.RequiredArgsConstructor;
 
+@Immutable
 @RequiredArgsConstructor
 public final class Authorization {
     private final transient String clientId;

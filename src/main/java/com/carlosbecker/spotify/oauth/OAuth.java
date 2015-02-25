@@ -2,6 +2,7 @@ package com.carlosbecker.spotify.oauth;
 
 import com.carlosbecker.SpotifyException;
 import com.google.common.net.HttpHeaders;
+import com.jcabi.aspects.Immutable;
 import com.jcabi.http.Request;
 import com.jcabi.http.Response;
 import com.jcabi.http.request.JdkRequest;
@@ -16,6 +17,7 @@ import lombok.SneakyThrows;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;
 
+@Immutable
 @RequiredArgsConstructor
 public final class OAuth {
     private static final String ROOT = "https://accounts.spotify.com/";
