@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Example {
     public static void main(String[] args) throws IOException, SpotifyException {
         new Dotenv().load();
-        final String scope = "";// "user-read-private playlist-modify-public playlist-read-private playlist-modify-private user-library-read user-library-modify";
+        final String scope = "user-read-private playlist-modify-public playlist-read-private playlist-modify-private user-library-read user-library-modify";
         final String callback = "http://localhost:4567/auth/spotify/callback";
         final String clientId = System.getProperty("SPOTIFY_CLIENT_ID");
         final String clientSecret = System.getProperty("SPOTIFY_CLIENT_SECRET");
