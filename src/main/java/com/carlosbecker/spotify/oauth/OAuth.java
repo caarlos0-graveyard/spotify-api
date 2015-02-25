@@ -43,8 +43,8 @@ public final class OAuth {
     }
 
     public Token token(String redirect) throws IOException, SpotifyException {
-        Response response = request(queryStringValue(redirect, "code"));
-        JsonObject json = jsonFrom(response);
+        final Response response = request(queryStringValue(redirect, "code"));
+        final JsonObject json = jsonFrom(response);
         if (response.status() != 200) {
             throw new SpotifyException(json.getString("error"));
         }
@@ -55,7 +55,8 @@ public final class OAuth {
         return new Token(
             json.getString("access_token"),
             json.getString("token_type"),
-            json.getInt("expires_in"));
+            json.getInt("expires_in"),
+            json.getString("refresh_token"));
     }
 
     private JsonObject jsonFrom(Response response) {
@@ -70,7 +71,7 @@ public final class OAuth {
             .body()
             .formParam("code", code)
             .formParam("redirect_uri", callback)
-            .formParam("grant_type", "client_credentials")
+            .formParam("grant_type", "authorization_code")
             .back()
             .header(
                 HttpHeaders.AUTHORIZATION,
