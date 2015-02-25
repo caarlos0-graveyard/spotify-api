@@ -7,7 +7,7 @@ import com.carlosbecker.spotify.oauth.Token;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Test {
+public class Example {
     public static void main(String[] args) throws IOException, SpotifyException {
         new Dotenv().load();
         final String scope = "playlist-modify-public playlist-read-private playlist-modify-private user-library-read user-library-modify";
